@@ -9,9 +9,7 @@ import {
     Form,
     FormGroup,
     Label,
-    Input,
-    FormText,
-    FormFeedback,
+    Input
   } from 'reactstrap';
   
   import Page from 'components/Page';
