@@ -19,7 +19,7 @@ const TablePage = () => {
                 <Row>
                   <Col>
                     <Card body>
-                      <Table {...{ [tableType]: true }}>
+                      <Table { ...{[tableType]: true} }>
                         <thead>
                           <tr>
                             <th>#</th>

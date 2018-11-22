@@ -1,3 +1,7 @@
+import React from 'react';
+import componentQueries from 'react-component-queries';
+import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
+
 import { STATE_LOGIN, STATE_SIGNUP } from 'components/AuthForm';
 import GAListener from 'components/GAListener';
 import { EmptyLayout, LayoutRoute, MainLayout } from 'components/Layout';
@@ -19,10 +23,11 @@ import ProgressPage from 'pages/ProgressPage';
 import TablePage from 'pages/TablePage';
 import TypographyPage from 'pages/TypographyPage';
 import WidgetPage from 'pages/WidgetPage';
-import CreateSalesmanPage from 'pages/CreateSalesmanPage';
-import React from 'react';
-import componentQueries from 'react-component-queries';
-import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
+// Salesman Pages
+import CreateSalesmanPage from 'pages/SalesmanPage/CreateSalesmanPage';
+import EditSalesmanPage from 'pages/SalesmanPage/EditSalesmanPage';
+import SalesmanList from 'pages/SalesmanPage/SalesmanList'
+
 import './styles/reduction.css';
 
 const getBasename = () => {
@@ -63,11 +68,23 @@ class App extends React.Component {
               layout={MainLayout}
               component={DashboardPage}
             />
-             <LayoutRoute
+            <LayoutRoute
               exact
               path="/create-salesman"
               layout={MainLayout}
               component={CreateSalesmanPage}
+            />
+            <LayoutRoute
+              exact
+              path="/edit-salesman"
+              layout={MainLayout}
+              component={EditSalesmanPage}
+            />
+            <LayoutRoute
+              exact
+              path="/salesman-list"
+              layout={MainLayout}
+              component={SalesmanList}
             />
             <LayoutRoute
               exact
