@@ -4,18 +4,18 @@ import {
   ZoomableGroup,
   Geographies,
   Geography,
-  Markers,
-  Marker,
+  // Markers,
+  // Marker,
 } from 'react-simple-maps';
-import { scaleLinear } from 'd3-scale';
+// import { scaleLinear } from 'd3-scale';
 
 import { getColor } from 'utils/colors';
 
 import world50m from 'assets/geo-data/world-50m.json';
 
-const cityScale = scaleLinear()
-  .domain([0, 37843000])
-  .range([1, 25]);
+// const cityScale = scaleLinear()
+//   .domain([0, 37843000])
+//   .range([1, 25]);
 
 class BubbleMap extends Component {
   state = {
@@ -24,9 +24,8 @@ class BubbleMap extends Component {
 
   async componentDidMount() {
     const cities = await import('assets/geo-data/world-most-populous-cities.json');
-
     this.setState({
-      cities,
+      cities: [cities]
     });
   }
 
@@ -79,8 +78,8 @@ class BubbleMap extends Component {
               )
             }
           </Geographies>
-          <Markers>
-            {this.state.cities.map((city, i) => (
+          {/* <Markers>
+            {this.state.cities && this.state.cities.map((city, i) => (
               <Marker key={i} marker={city}>
                 <circle
                   cx={0}
@@ -92,7 +91,7 @@ class BubbleMap extends Component {
                 />
               </Marker>
             ))}
-          </Markers>
+          </Markers> */}
         </ZoomableGroup>
       </ComposableMap>
     );
