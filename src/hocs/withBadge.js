@@ -47,7 +47,7 @@ const sizeMap = {
 };
 
 const withBadge = ({
-  position = 'bottom-right',
+  position =  'bottom-right',
   size = 'sm',
   style = {},
   className,
@@ -70,5 +70,6 @@ const withBadge = ({
     </Tag>
   );
 };
+
 
 export default withBadge;

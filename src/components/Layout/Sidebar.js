@@ -87,6 +87,7 @@ const pageContents = [
 
 const navItems = [
   { to: '/', name: 'dashboard', exact: true, Icon: MdDashboard },
+  { to: '/transaction-list', name: 'transaction', exact: true, Icon: MdDashboard },
   // { to: '/cards', name: 'cards', exact: false, Icon: MdWeb },
   // { to: '/charts', name: 'charts', exact: false, Icon: MdInsertChart },
   // { to: '/widgets', name: 'widgets', exact: false, Icon: MdWidgets },
@@ -153,7 +154,7 @@ class Sidebar extends React.Component {
                 </BSNavLink>
               </NavItem>
             ))}
-
+            
             {/* Salesmen */}
 
             <NavItem

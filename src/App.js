@@ -27,6 +27,8 @@ import WidgetPage from 'pages/WidgetPage';
 import CreateSalesmanPage from 'pages/SalesmanPage/CreateSalesmanPage';
 import EditSalesmanPage from 'pages/SalesmanPage/EditSalesmanPage';
 import SalesmanList from 'pages/SalesmanPage/SalesmanList'
+// Transaction Pages 
+import TransactionList from 'pages/TransactionPage/TransactionList'
 
 import './styles/reduction.css';
 
@@ -85,6 +87,12 @@ class App extends React.Component {
               path="/salesman-list"
               layout={MainLayout}
               component={SalesmanList}
+            />
+            <LayoutRoute
+              exact
+              path="/transaction-list"
+              layout={MainLayout}
+              component={TransactionList}
             />
             <LayoutRoute
               exact
