@@ -11,7 +11,7 @@
 ## To Work With Mock Data
 
 1. Go to project folder. Open another terminal
-2. Run: `json-server -w -p 3001`
+2. Run: `json-server -w -p 3001 db.json`
 
 Note: Install json-server globally
 
