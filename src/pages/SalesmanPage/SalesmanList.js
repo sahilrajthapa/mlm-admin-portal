@@ -9,7 +9,7 @@ export default class SalesmanList extends Component {
   }
   componentDidMount() {
       console.log('salemanlist mounted')
-      axios.get('http://localhost:5000/api/salesmen')
+      axios.get('http://localhost:3001/salesmen')
         .then(res => {
             let data = res.data
             console.log('resdata')

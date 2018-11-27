@@ -28,7 +28,8 @@ import {
   MdModeEdit,
   MdPerson,
   MdPersonAdd,
-  MdList
+  MdList,
+  MdCompareArrows
 } from 'react-icons/lib/md';
 import { NavLink } from 'react-router-dom';
 import {
@@ -87,7 +88,7 @@ const pageContents = [
 
 const navItems = [
   { to: '/', name: 'dashboard', exact: true, Icon: MdDashboard },
-  { to: '/transaction-list', name: 'transaction', exact: true, Icon: MdDashboard },
+  { to: '/transaction-list', name: 'transaction', exact: true, Icon: MdCompareArrows },
   // { to: '/cards', name: 'cards', exact: false, Icon: MdWeb },
   // { to: '/charts', name: 'charts', exact: false, Icon: MdInsertChart },
   // { to: '/widgets', name: 'widgets', exact: false, Icon: MdWidgets },
@@ -95,7 +96,7 @@ const navItems = [
 
 const navSalesmen = [
   { to: '/create-salesman', name: 'Create Salesman', exact: false, Icon: MdPersonAdd },
-  { to: '/edit-salesman', name: 'Edit Salesman', exact: false, Icon: MdModeEdit },
+  // { to: '/edit-salesman', name: 'Edit Salesman', exact: false, Icon: MdModeEdit },
   { to: '/salesman-list', name: 'Salesman List', exact: false, Icon: MdList }
 ];
 

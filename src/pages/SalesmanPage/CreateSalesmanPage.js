@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import {
-    Row,
-    Col,
-    Card,
-    CardHeader,
-    CardBody,
-    Button,
-    Form,
-    FormGroup,
-    Label,
-    Input
-  } from 'reactstrap';
+  Row,
+  Col,
+  Card,
+  CardHeader,
+  CardBody,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input
+} from 'reactstrap';
 import axios from 'axios';
+import uuidv4 from 'uuid/v4'
 import Page from 'components/Page';
 
 class CreateSalesmanPage extends Component {
@@ -24,40 +25,40 @@ class CreateSalesmanPage extends Component {
   }
 
   onChange = (e) => {
-    console.log('this.setstate')
     this.setState({
       [e.target.name]: e.target.value
     })
   }
   onFormSubmit = (e) => {
     e.preventDefault()
-    const { name, wechatId, level, address, phone } = this.state 
-    let salesmanData = {
-        name,
-        wechatId,
-        level,
-        address,
-        phone
+    const { name, wechatId, level, address, phone } = this.state
+    const salesmanData = {
+      id: uuidv4(),
+      name,
+      wechatId,
+      level,
+      address,
+      phone
     }
-    var headers = {
+    const headers = {
       'Content-Type': 'application/json',
       'Accept': 'application/json' 
-    } 
-    axios.post('http://localhost:5000/api/salesmen', salesmanData, {headers: headers})
-          .then( () => {            
-            this.props.history.push('/salesman-list')
-          })
-          .catch(err => console.log('err', err))
+    }
+    axios.post('http://localhost:3001/salesmen', salesmanData, { headers: headers })
+      .then(() => {
+        this.props.history.push('/salesman-list')
+      })
+      .catch(err => console.log('err', err))
   }
 
   render() {
-    const { name, wechatId, level, address, phone } = this.state 
+    const { name, wechatId, level, address, phone } = this.state
     return (
-        <Page 
-          title="Create Salesman"
-          breadcrumbs={[{ name: 'Create Salesman', active: true }]}>
-          <Row>
-            <Col xl={6} lg={12} md={12}>
+      <Page
+        title="Create Salesman"
+        breadcrumbs={[{ name: 'Create Salesman', active: true }]}>
+        <Row>
+          <Col xl={6} lg={12} md={12}>
             <Card>
               <CardHeader>Create Salesman</CardHeader>
               <CardBody>
@@ -84,7 +85,7 @@ class CreateSalesmanPage extends Component {
                       placeholder="Enter salesman wechat Id"
                     />
                   </FormGroup>
-                  <FormGroup>
+                  {/* <FormGroup>
                     <Label for="level">Level</Label>
                     <Input
                       type="text"
@@ -94,6 +95,33 @@ class CreateSalesmanPage extends Component {
                       id="level"
                       placeholder="Enter salesman level"
                     />
+                  </FormGroup> */}
+                  <FormGroup tag="fieldset" row>
+                    <Label for="checkbox2" sm={2}>
+                      Level
+                  </Label>
+                    <Col sm={10} style={{ marginBottom: '0px' }}>
+                      <FormGroup check>
+                        <Label check>
+                          <Input type="radio" name="level" value="1" checked={level === "1"} onChange={this.onChange} /> Level 1
+                      </Label>
+                      </FormGroup>
+                      <FormGroup check>
+                        <Label check>
+                          <Input type="radio" name="level" value="2" checked={level === "2"} onChange={this.onChange} /> Level 2
+                      </Label>
+                      </FormGroup>
+                      <FormGroup check>
+                        <Label check>
+                          <Input type="radio" name="level" value="3" checked={level === "3"} onChange={this.onChange} /> Level 3
+                      </Label>
+                      </FormGroup>
+                      <FormGroup check>
+                        <Label check>
+                          <Input type="radio" name="level" value="4" checked={level === "4"} onChange={this.onChange} /> Level 4
+                      </Label>
+                      </FormGroup>
+                    </Col>
                   </FormGroup>
                   <FormGroup>
                     <Label for="address">Address</Label>

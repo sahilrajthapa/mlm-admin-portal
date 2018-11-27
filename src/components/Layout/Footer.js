@@ -8,7 +8,7 @@ const Footer = () => {
     <Navbar>
       <Nav navbar>
         <NavItem>
-          2018 MLM Admin 
+          {new Date().getFullYear()} MLM Admin 
         </NavItem>
       </Nav>
     </Navbar>
