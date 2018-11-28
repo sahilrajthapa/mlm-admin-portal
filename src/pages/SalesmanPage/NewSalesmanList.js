@@ -5,6 +5,7 @@ import ReactTable from "react-table";
 import "react-table/react-table.css";
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
+import Page from 'components/Page';
 
 class NewSalesmanList extends Component {
 
@@ -21,11 +22,27 @@ class NewSalesmanList extends Component {
                 })
             })
     }
+
+    deleteSalesman = (id) => {
+      axios.delete(`http://localhost:3001/salesmen/${id}`)
+         .then(() => {
+            let filterSalesmen =  this.state.salesmen.filter(salesman => {
+                 return salesman.id !== id
+             })
+            
+             this.setState({
+                 salesmen: filterSalesmen
+             })
+         })
+    }
+
     render() {
         const { salesmen } = this.state;
 
         return (
-            <div>
+            <Page
+                title="Salesmen List"
+                breadcrumbs={[{ name: 'Salesmen List', active: true }]}>
                 <ReactTable
                     data={salesmen}
                     filterable
@@ -73,15 +90,21 @@ class NewSalesmanList extends Component {
                         {
                             Header: "",
                             id: "button",
-                            accessor: d => (<Button color="primary" type="submit" tag={Link}
-                            to={`/edit-salesman/${d._id ? d._id : d.id}`} >Edit</Button>),
+                            accessor: d => (<Button color="primary" size="sm" block tag={Link}
+                            to={`/edit-salesman/${d.id}`} >Edit</Button>),
+                            filterable: false
+                        },
+                        {
+                            Header: "",
+                            id: "button2",
+                            accessor: d => (<Button color="danger" size="sm" block onClick={() => this.deleteSalesman(d.id)}>Delete</Button>),
                             filterable: false
                         }
                     ]}
                     defaultPageSize={10}
                     className="-striped -highlight"
                 />
-            </div>
+            </Page>
         );
     }
 }

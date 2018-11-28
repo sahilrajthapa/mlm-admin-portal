@@ -18,9 +18,24 @@ class EditSalesmanPage extends Component {
   state = {
     name: '',
     wechatId: '',
-    level: '',
+    level: null,
     address: '',
     phone: ''
+  }
+  
+  componentDidMount() {  
+    axios.get(`http://localhost:3001/salesmen/?id=${this.props.match.params.id}`)
+    .then((res) => {
+       let data = res.data[0];
+       this.setState({
+         name: data.name,
+         wechatId: data.wechatId,
+         level: data.level.toString(),
+         address: data.address,
+         phone: data.phone
+       })
+    })
+    .catch(err => console.log('err', err))
   }
 
   onChange = (e) => {
@@ -43,7 +58,7 @@ class EditSalesmanPage extends Component {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
-    axios.put('http://localhost:3001/salesmen', salesmanData, { headers: headers })
+    axios.put(`http://localhost:3001/salesmen/${this.props.match.params.id}`, salesmanData, { headers: headers })
       .then(() => {
         this.props.history.push('/salesman-list')
       })
@@ -59,7 +74,7 @@ class EditSalesmanPage extends Component {
         <Row>
           <Col xl={6} lg={12} md={12}>
             <Card>
-              <CardHeader>Create Salesman</CardHeader>
+              <CardHeader>Edit Salesman</CardHeader>
               <CardBody>
                 <Form onSubmit={this.onFormSubmit}>
                   <FormGroup>
@@ -84,40 +99,29 @@ class EditSalesmanPage extends Component {
                       placeholder="Enter salesman wechat Id"
                     />
                   </FormGroup>
-                  {/* <FormGroup>
-                    <Label for="level">Level</Label>
-                    <Input
-                      type="text"
-                      name="level"
-                      value={level}
-                      onChange={this.onChange}
-                      id="level"
-                      placeholder="Enter salesman level"
-                    />
-                  </FormGroup> */}
                   <FormGroup tag="fieldset" row>
-                    <Label for="checkbox2" sm={2}>
+                    <Label for="checkbox2" sm={2} style={{ paddingTop: '0px', paddingBottom: '0px'}}>
                       Level
                   </Label>
                     <Col sm={10} style={{ marginBottom: '0px' }}>
                       <FormGroup check>
                         <Label check>
-                          <Input type="radio" name="level" value="level 1" checked={level === "level 1"} onChange={this.onChange} /> Level 1
+                          <Input type="radio" name="level" value="1" checked={level === "1"} onChange={this.onChange} /> Level 1
                       </Label>
                       </FormGroup>
                       <FormGroup check>
                         <Label check>
-                          <Input type="radio" name="level" value="level 2" checked={level === "level 2"} onChange={this.onChange} /> Level 2
+                          <Input type="radio" name="level" value="2" checked={level === "2"} onChange={this.onChange} /> Level 2
                       </Label>
                       </FormGroup>
                       <FormGroup check>
                         <Label check>
-                          <Input type="radio" name="level" value="level 3" checked={level === "level 3"} onChange={this.onChange} /> Level 3
+                          <Input type="radio" name="level" value="3" checked={level === "3"} onChange={this.onChange} /> Level 3
                       </Label>
                       </FormGroup>
                       <FormGroup check>
                         <Label check>
-                          <Input type="radio" name="level" value="level 4" checked={level === "level 4"} onChange={this.onChange} /> Level 4
+                          <Input type="radio" name="level" value="4" checked={level === "4"} onChange={this.onChange} /> Level 4
                       </Label>
                       </FormGroup>
                     </Col>

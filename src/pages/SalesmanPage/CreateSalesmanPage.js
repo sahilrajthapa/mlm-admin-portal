@@ -85,19 +85,8 @@ class CreateSalesmanPage extends Component {
                       placeholder="Enter salesman wechat Id"
                     />
                   </FormGroup>
-                  {/* <FormGroup>
-                    <Label for="level">Level</Label>
-                    <Input
-                      type="text"
-                      name="level"
-                      value={level}
-                      onChange={this.onChange}
-                      id="level"
-                      placeholder="Enter salesman level"
-                    />
-                  </FormGroup> */}
                   <FormGroup tag="fieldset" row>
-                    <Label for="checkbox2" sm={2}>
+                    <Label for="checkbox2" sm={2} style={{ paddingTop: '0px', paddingBottom: '0px'}}>
                       Level
                   </Label>
                     <Col sm={10} style={{ marginBottom: '0px' }}>

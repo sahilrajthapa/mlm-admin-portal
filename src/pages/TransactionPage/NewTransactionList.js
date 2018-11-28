@@ -3,6 +3,7 @@ import matchSorter from 'match-sorter'
 import axios from 'axios'
 import ReactTable from "react-table";
 import "react-table/react-table.css";
+import Page from 'components/Page';
 
 class NewTransactionList extends Component {
 
@@ -33,7 +34,9 @@ class NewTransactionList extends Component {
             }
         }
         return (
-            <div>
+            <Page
+                title="Transaction List"
+                breadcrumbs={[{ name: 'Transaction List', active: true }]}>
                 <ReactTable
                     data={transactionList}
                     filterable
@@ -104,7 +107,7 @@ class NewTransactionList extends Component {
                     defaultPageSize={10}
                     className="-striped -highlight"
                 />
-            </div>
+            </Page>
         );
     }
 }

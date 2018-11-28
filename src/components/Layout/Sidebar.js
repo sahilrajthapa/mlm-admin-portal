@@ -26,10 +26,13 @@ import {
   MdWeb,
   MdWidgets,
   MdModeEdit,
+  MdCreate,
   MdPerson,
   MdPersonAdd,
   MdList,
-  MdCompareArrows
+  MdCompareArrows,
+  MdLoop,
+  MdToys
 } from 'react-icons/lib/md';
 import { NavLink } from 'react-router-dom';
 import {
@@ -88,7 +91,7 @@ const pageContents = [
 
 const navItems = [
   { to: '/', name: 'dashboard', exact: true, Icon: MdDashboard },
-  { to: '/transaction-list', name: 'transaction', exact: true, Icon: MdCompareArrows },
+  { to: '/transaction-list', name: 'transaction', exact: true, Icon: MdLoop },
   // { to: '/cards', name: 'cards', exact: false, Icon: MdWeb },
   // { to: '/charts', name: 'charts', exact: false, Icon: MdInsertChart },
   // { to: '/widgets', name: 'widgets', exact: false, Icon: MdWidgets },
@@ -100,6 +103,10 @@ const navSalesmen = [
   { to: '/salesman-list', name: 'Salesman List', exact: false, Icon: MdList }
 ];
 
+const navProducts = [
+   { to: '/create-product', name: 'Create Product', exact: false, Icon: MdCreate}
+]
+
 
 const bem = bn.create('sidebar');
 
@@ -108,7 +115,8 @@ class Sidebar extends React.Component {
     isOpenComponents: false,
     isOpenContents: false,
     isOpenPages: false,
-    isOpenSalesmen: false
+    isOpenSalesmen: false,
+    isOpenProducts: false
   };
 
   handleClick = name => () => {
@@ -273,6 +281,44 @@ class Sidebar extends React.Component {
                 </NavItem>
               ))}
             </Collapse> */}
+
+            <NavItem
+              className={bem.e('nav-item')}
+              onClick={this.handleClick('Products')}>
+              <BSNavLink className={bem.e('nav-item-collapse')}>
+                <div className="d-flex">
+                  <MdToys className={bem.e('nav-item-icon')} />
+                  <span className="">Products</span>
+                </div>
+                <MdKeyboardArrowDown
+                  className={bem.e('nav-item-icon')}
+                  style={{
+                    padding: 0,
+                    transform: this.state.isOpenProducts
+                      ? 'rotate(0deg)'
+                      : 'rotate(-90deg)',
+                    transitionDuration: '0.3s',
+                    transitionProperty: 'transform',
+                  }}
+                />
+              </BSNavLink>
+            </NavItem>
+            <Collapse isOpen={this.state.isOpenProducts}>
+              {navProducts.map(({ to, name, exact, Icon }, index) => (
+                <NavItem key={index} className={bem.e('nav-item')}>
+                  <BSNavLink
+                    id={`navItem-${name}-${index}`}
+                    className="text-uppercase"
+                    tag={NavLink}
+                    to={to}
+                    activeClassName="active"
+                    exact={exact}>
+                    <Icon className={bem.e('nav-item-icon')} />
+                    <span className="">{name}</span>
+                  </BSNavLink>
+                </NavItem>
+              ))}
+            </Collapse>
 
             <NavItem
               className={bem.e('nav-item')}

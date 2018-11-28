@@ -31,6 +31,8 @@ import NewSalesmanList from 'pages/SalesmanPage/NewSalesmanList'
 // Transaction Pages 
 // import TransactionList from 'pages/TransactionPage/TransactionList'
 import NewTransactionList from 'pages/TransactionPage/NewTransactionList'
+// Product Page
+import CreateProductPage from 'pages/ProductPage/CreateProductPage'
 
 import './styles/reduction.css';
 
@@ -107,6 +109,13 @@ class App extends React.Component {
               path="/transaction-list"
               layout={MainLayout}
               component={NewTransactionList}
+            />
+
+            <LayoutRoute
+              exact
+              path="/create-product"
+              layout={MainLayout}
+              component={CreateProductPage}
             />
             <LayoutRoute
               exact

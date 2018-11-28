@@ -147,22 +147,17 @@
   ],
   "salesmen": [
     {
-      "assigned": false,
-      "ancestors": [],
-      "_id": "5bf15e050c96e729d7016565",
-      "name": "Radhe Oli",
-      "phone": 9842166345,
-      "address": "Dhapasi",
-      "level": 1,
+      "name": "zlatan",
       "wechatId": "a-zlatan10",
-      "date": "2018-11-18T12:41:41.621Z",
-      "__v": 0,
-      "createdAt": "2018-11-27T10:59:02.213Z"
+      "level": "1",
+      "address": "Cape Town",
+      "phone": 9842166345,
+      "id": "5bf15e050c96e729d7016565"
     },
     {
       "assigned": false,
       "ancestors": [],
-      "_id": "5bf14184cf7ee8208283267b",
+      "id": "5bf14184cf7ee8208283267b",
       "name": "Mary Jane",
       "phone": 9842163898,
       "address": "Xinjang",
@@ -173,53 +168,20 @@
       "createdAt": "2018-11-27T10:59:02.215Z"
     },
     {
-      "assigned": true,
-      "ancestors": [
-        "5bf548e9bb7cb9345a2c9e27",
-        "5bf789465abc4b17c69aa560"
-      ],
-      "_id": "5bf15dd20c96e729d7016562",
       "name": "Kevin Hendricks",
-      "phone": 9842420712,
-      "address": "Sankhamul",
-      "level": 3,
       "wechatId": "hendricks27",
-      "__v": 1,
-      "createdAt": "2018-11-23T05:11:01.982Z"
-    },
-    {
-      "assigned": false,
-      "ancestors": [],
-      "_id": "5bf548e9bb7cb9345a2c9e27",
-      "name": "Rajiv Pant",
-      "phone": 9862207128,
+      "level": "1",
       "address": "Macau",
-      "level": 4,
-      "wechatId": "rajiv_pant",
-      "createdAt": "2018-11-21T12:00:41.846Z",
-      "__v": 2
+      "phone": 9842420712,
+      "id": "5bf15dd20c96e729d7016562"
     },
     {
-      "assigned": true,
-      "ancestors": [
-        "5bf548e9bb7cb9345a2c9e27"
-      ],
-      "_id": "5bf789465abc4b17c69aa560",
-      "name": "Ranjan Pant",
-      "phone": 9842216333,
-      "address": "Kupandole",
-      "level": 3,
-      "wechatId": "ranjan_pant",
-      "createdAt": "2018-11-23T04:59:50.137Z",
-      "__v": 3
-    },
-    {
-      "id": "319d90ae-1358-4125-b595-b8bb54a0fdc8",
       "name": "Justin Langer",
       "wechatId": "langer@justin",
-      "level": "1",
+      "level": "3",
       "address": "Perth",
-      "phone": "9813204528"
+      "phone": "9813204528",
+      "id": "319d90ae-1358-4125-b595-b8bb54a0fdc8"
     }
   ]
 }
