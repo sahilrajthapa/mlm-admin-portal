@@ -183,5 +183,28 @@
       "phone": "9813204528",
       "id": "319d90ae-1358-4125-b595-b8bb54a0fdc8"
     }
+  ],
+  "products": [
+    {
+      "id": "66fcbcd8-34d3-439f-b1b1-6763afb123b0",
+      "name": "Test Product",
+      "category": [
+        {
+          "label": "Electronic Devices",
+          "value": "Electronic Devices"
+        },
+        {
+          "label": "Electronic Accessories",
+          "value": "Electronic Accessories"
+        }
+      ],
+      "mainImage": "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0",
+      "productImg": [
+        "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0",
+        "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0"
+      ],
+      "details": "It is a test product details",
+      "deliveryInfo": "0"
+    }
   ]
 }

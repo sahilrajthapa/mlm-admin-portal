@@ -85,11 +85,10 @@ class CreateSalesmanPage extends Component {
                       placeholder="Enter salesman wechat Id"
                     />
                   </FormGroup>
-                  <FormGroup tag="fieldset" row>
-                    <Label for="checkbox2" sm={2} style={{ paddingTop: '0px', paddingBottom: '0px'}}>
+                  <FormGroup>
+                    <Label for="checkbox2">
                       Level
-                  </Label>
-                    <Col sm={10} style={{ marginBottom: '0px' }}>
+                    </Label>
                       <FormGroup check>
                         <Label check>
                           <Input type="radio" name="level" value="1" checked={level === "1"} onChange={this.onChange} /> Level 1
@@ -110,7 +109,6 @@ class CreateSalesmanPage extends Component {
                           <Input type="radio" name="level" value="4" checked={level === "4"} onChange={this.onChange} /> Level 4
                       </Label>
                       </FormGroup>
-                    </Col>
                   </FormGroup>
                   <FormGroup>
                     <Label for="address">Address</Label>

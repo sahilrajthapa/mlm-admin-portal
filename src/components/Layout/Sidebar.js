@@ -104,7 +104,8 @@ const navSalesmen = [
 ];
 
 const navProducts = [
-   { to: '/create-product', name: 'Create Product', exact: false, Icon: MdCreate}
+   { to: '/create-product', name: 'Create Product', exact: false, Icon: MdCreate},
+   { to: '/product-list', name: 'Product List', exact: false, Icon: MdList }
 ]
 
 

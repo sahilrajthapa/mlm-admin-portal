@@ -33,6 +33,7 @@ import NewSalesmanList from 'pages/SalesmanPage/NewSalesmanList'
 import NewTransactionList from 'pages/TransactionPage/NewTransactionList'
 // Product Page
 import CreateProductPage from 'pages/ProductPage/CreateProductPage'
+import ProductListPage from 'pages/ProductPage/ProductListPage'
 
 import './styles/reduction.css';
 
@@ -117,12 +118,19 @@ class App extends React.Component {
               layout={MainLayout}
               component={CreateProductPage}
             />
+
+            <LayoutRoute
+              exact
+              path="/product-list"
+              layout={MainLayout}
+              component={ProductListPage}
+            />
             <LayoutRoute
               exact
               path="/buttons"
               layout={MainLayout}
               component={ButtonPage}
-            />
+            /> 
             <LayoutRoute
               exact
               path="/cards"

@@ -18,7 +18,7 @@ import Page from 'components/Page';
 import ImageInputField from './ImageInputField'
 
 
-class CreateProductPage extends Component {
+class EditProductPage extends Component {
   state = {
     name: '',
     category: [],
@@ -105,12 +105,12 @@ class CreateProductPage extends Component {
 
       
       <Page
-        title="Create Product"
-        breadcrumbs={[{ name: 'Create Product', active: true }]}>
+        title="Edit Product"
+        breadcrumbs={[{ name: 'Edit Product', active: true }]}>
         <Row>
           <Col xl={6} lg={12} md={12}>
             <Card>
-              <CardHeader>Create Product</CardHeader>
+              <CardHeader>Edit Product</CardHeader>
               <CardBody>
                 <Form onSubmit={this.onFormSubmit}>
                   <FormGroup>
@@ -187,5 +187,5 @@ class CreateProductPage extends Component {
   }
 }
 
-export default CreateProductPage
+export default EditProductPage
 
