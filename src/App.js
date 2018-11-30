@@ -33,12 +33,15 @@ import NewSalesmanList from 'pages/SalesmanPage/NewSalesmanList'
 import NewTransactionList from 'pages/TransactionPage/NewTransactionList'
 // Product Page
 import CreateProductPage from 'pages/ProductPage/CreateProductPage'
+import EditProductPage from 'pages/ProductPage/EditProductPage'
 import ProductListPage from 'pages/ProductPage/ProductListPage'
 
 import './styles/reduction.css';
 
 const getBasename = () => {
+  console.log('process.env.PUBLIC_URL', process.env.PUBLIC_URL)
   return `/${process.env.PUBLIC_URL.split('/').pop()}`;
+ 
 };
 
 class App extends React.Component {
@@ -117,6 +120,12 @@ class App extends React.Component {
               path="/create-product"
               layout={MainLayout}
               component={CreateProductPage}
+            />
+            <LayoutRoute
+              exact
+              path="/edit-product/:id"
+              layout={MainLayout}
+              component={EditProductPage}
             />
 
             <LayoutRoute

@@ -38,16 +38,15 @@ class CreateProductPage extends Component {
     } else {
       this.setState({
         [e.target.name]: e.target.value
-    }, () => console.log(this.state))
+    })
     }
     
   }
 
   onInputChange = (category) => {
-    console.log(category)
     this.setState({
        category
-    }, () => console.log(this.state))
+    })
   }
 
   generateImgInput = () => {
@@ -59,7 +58,6 @@ class CreateProductPage extends Component {
 
   onFormSubmit = (e) => {
     e.preventDefault()
-    console.log('submitted')
     const { name, category, mainImage, productImg, details, deliveryInfo } = this.state
     const productData = {
       id: uuidv4(),
@@ -76,7 +74,7 @@ class CreateProductPage extends Component {
     }
     axios.post('http://localhost:3001/products', productData, { headers: headers })
       .then(() => {
-        console.log('submitted')
+        this.props.history.push('/product-list')
       })
       .catch(err => console.log('err', err))
   }
@@ -94,16 +92,8 @@ class CreateProductPage extends Component {
       { label: "Men's Fashion", value: "Men's Fashion" }
     ];
     
-    // let imageInput
-    // if (this.state.addImg) {
-    //     imageInput = <FormGroup>
-    //     <Label for="exampleFile">Main Image</Label>
-    //     <Input type="file" name="img"  onChange={this.onChange}/>        
-    //    </FormGroup>
-    // }
-    return (
-
-      
+  
+    return ( 
       <Page
         title="Create Product"
         breadcrumbs={[{ name: 'Create Product', active: true }]}>

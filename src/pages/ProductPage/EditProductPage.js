@@ -28,6 +28,23 @@ class EditProductPage extends Component {
     deliveryInfo: '',
     imgInputField: []
   }
+  
+  componentDidMount() {  
+    axios.get(`http://localhost:3001/products/?id=${this.props.match.params.id}`)
+    .then((res) => {
+       let data = res.data[0];
+       this.setState({
+        name: data.name,
+        category: data.category,
+        mainImage: data.mainImage,
+        productImg: data.productImg,
+        details: data.details,
+        deliveryInfo: data.deliveryInfo
+      })
+    })
+    .catch(err => console.log('err', err))
+  }
+
 
   onChange = (e) => {
     if (e.target.name.indexOf('productImg') !== -1) {
@@ -38,16 +55,15 @@ class EditProductPage extends Component {
     } else {
       this.setState({
         [e.target.name]: e.target.value
-    }, () => console.log(this.state))
+    })
     }
     
   }
 
   onInputChange = (category) => {
-    console.log(category)
     this.setState({
        category
-    }, () => console.log(this.state))
+    })
   }
 
   generateImgInput = () => {
@@ -59,7 +75,6 @@ class EditProductPage extends Component {
 
   onFormSubmit = (e) => {
     e.preventDefault()
-    console.log('submitted')
     const { name, category, mainImage, productImg, details, deliveryInfo } = this.state
     const productData = {
       id: uuidv4(),
@@ -74,15 +89,15 @@ class EditProductPage extends Component {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
-    axios.post('http://localhost:3001/products', productData, { headers: headers })
+    axios.put(`http://localhost:3001/salesmen/${this.props.match.params.id}`, productData, { headers: headers })
       .then(() => {
-        console.log('submitted')
+        this.props.history.push('/product-list')
       })
       .catch(err => console.log('err', err))
   }
 
   render() {
-    const { name, imgInputField, details, deliveryInfo } = this.state
+    const { name, category,  imgInputField, details, deliveryInfo } = this.state
     const options = [
       { label: "Health & Beauty", value: "Health & Beauty" },
       { label: "Electronic Devices", value: "Electronic Devices" },
@@ -129,6 +144,7 @@ class EditProductPage extends Component {
                       Categories
                   </Label>
                     <Select
+                      value={category}
                       isMulti
                       onChange={this.onInputChange}
                       options={options}
@@ -136,7 +152,7 @@ class EditProductPage extends Component {
                   </FormGroup>
                   <FormGroup>
                    <Label for="exampleFile">Product Main Image</Label>
-                   <Input type="file" name="mainImage"  onChange={this.onChange}/>                
+                   <Input type="file" name="mainImage" onChange={this.onChange}/>                
                   </FormGroup>
 
                   <FormGroup>

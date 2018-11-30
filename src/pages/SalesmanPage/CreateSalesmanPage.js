@@ -24,6 +24,8 @@ class CreateSalesmanPage extends Component {
     phone: ''
   }
 
+ 
+
   onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
