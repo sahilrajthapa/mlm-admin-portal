@@ -25,20 +25,26 @@ class NewSalesmanList extends Component {
     }
 
     deleteProduct = (id) => {
-      axios.delete(`${url.products}/${id}`)
-         .then(() => {
-            let filterProducts =  this.state.products.filter(product => {
-                 return product.id !== id
-             })
-            
-             this.setState({
-                 products: filterProducts
-             })
-         })
+        axios.delete(`${url.products}/${id}`)
+            .then(() => {
+                let filterProducts = this.state.products.filter(product => {
+                    return product.id !== id
+                })
+
+                this.setState({
+                    products: filterProducts
+                })
+            })
     }
 
     render() {
         const { products } = this.state;
+        const checkCategory = (category) => {
+            const actualCategory = Array.isArray(category) ? category.map((cat, i) => {
+                return i === 0 ?  cat.value : (', ' + cat.value)
+                   }) : category.value
+            return actualCategory
+        }
 
         return (
             <Page
@@ -56,38 +62,31 @@ class NewSalesmanList extends Component {
                                 matchSorter(rows, filter.value, { keys: ["name"] }),
                             filterAll: true
                         },
-                        {
+                        {   
+                            width: 150,
                             Header: "Category",
                             id: "category",
-                            accessor: d => d.category.map((cat, i) => {
-                                return  (
-                                <p key={i}>{cat.value}</p>
-                                )
-                            }) ,
-                            filterMethod: (filter, rows) =>
+                            accessor: d => checkCategory(d.category),
+                            filterMethod: (filter, rows) => 
                                 matchSorter(rows, filter.value, { keys: ["category"] }),
                             filterAll: true
                         },
                         {
                             Header: "Product Main Image",
                             id: "main image",
-                            accessor: d =>  (<img src={d.mainImage} alt={d.name} style={{ width: '75px' }} />),
-                            filterMethod: (filter, rows) =>
-                                matchSorter(rows, filter.value, { keys: ["main image"] }),
+                            accessor: d => (<img src={d.mainImage} alt={d.name} style={{ width: '75px' }} />),
                             filterable: false
                         },
                         {
                             Header: "Product Image",
                             id: "image",
-                            accessor: d =>  d.productImg.map((image, i) => {
-                               return  (
-                               <p key={i} style={{textAlign: 'center'}}>
-                                    <img src={image} alt={`product${i}`} style={{ width: '75px' }} />
-                               </p>
-                               ) 
+                            accessor: d => d.productImg.map((image, i) => {
+                                return (
+                                    <p key={i} style={{ textAlign: 'center' }}>
+                                        <img src={image} alt={`product${i}`} style={{ width: '75px' }} />
+                                    </p>
+                                )
                             }),
-                            filterMethod: (filter, rows) =>
-                                matchSorter(rows, filter.value, { keys: ["image"] }),
                             filterable: false
                         },
                         {
@@ -102,7 +101,7 @@ class NewSalesmanList extends Component {
                             Header: "",
                             id: "button",
                             accessor: d => (<Button color="primary" size="sm" block tag={Link}
-                            to={`/edit-product/${d.id}`} >Edit</Button>),
+                                to={`/edit-product/${d.id}`} >Edit</Button>),
                             filterable: false
                         },
                         {

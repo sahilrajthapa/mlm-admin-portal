@@ -54,8 +54,9 @@ class NewTransactionList extends Component {
                             Header: "Order Status",
                             id: "order_status",
                             accessor: d => orderStatus(d.order_status),
-                            filterMethod: (filter, rows) =>
-                                matchSorter(rows, filter.value, { keys: ["order_status"] }),
+                            filterMethod: (filter, rows) => {
+                                console.log('match',  matchSorter(rows, filter.value, { keys: ["order_status"] }))
+                                return matchSorter(rows, filter.value, { keys: ["order_status"] }) },
                             filterAll: true
                         },
                         {

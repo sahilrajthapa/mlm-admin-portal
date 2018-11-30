@@ -205,6 +205,22 @@
       ],
       "details": "It is a test product details",
       "deliveryInfo": "0"
+    },
+    {
+      "id": "46839a7c-7665-4a8c-bf05-4bd796c232c2",
+      "name": "Jeans",
+      "category": [
+        {
+          "label": "Men's Fashion",
+          "value": "Men's Fashion"
+        }
+      ],
+      "mainImage": "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0",
+      "productImg": [
+        "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0"
+      ],
+      "details": "Jeans for men",
+      "deliveryInfo": "1"
     }
   ]
 }
