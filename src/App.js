@@ -39,13 +39,14 @@ import ProductListPage from 'pages/ProductPage/ProductListPage'
 import './styles/reduction.css';
 
 const getBasename = () => {
-  console.log('process.env.PUBLIC_URL', process.env.PUBLIC_URL)
   return `/${process.env.PUBLIC_URL.split('/').pop()}`;
  
 };
 
 class App extends React.Component {
+  
   render() {
+    const { breakpoint } = this.props
     return (
       <BrowserRouter basename={getBasename()}>
         <GAListener>
@@ -75,18 +76,21 @@ class App extends React.Component {
             <LayoutRoute
               exact
               path="/"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={DashboardPage}
             />
             <LayoutRoute
               exact
               path="/create-salesman"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={CreateSalesmanPage}
             />
             <LayoutRoute
               exact
               path="/edit-salesman/:id"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={EditSalesmanPage}
             />
@@ -99,6 +103,7 @@ class App extends React.Component {
             <LayoutRoute
               exact
               path="/salesman-list"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={NewSalesmanList}
             />
@@ -111,6 +116,7 @@ class App extends React.Component {
             <LayoutRoute
               exact
               path="/transaction-list"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={NewTransactionList}
             />
@@ -118,12 +124,14 @@ class App extends React.Component {
             <LayoutRoute
               exact
               path="/create-product"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={CreateProductPage}
             />
             <LayoutRoute
               exact
               path="/edit-product/:id"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={EditProductPage}
             />
@@ -131,66 +139,77 @@ class App extends React.Component {
             <LayoutRoute
               exact
               path="/product-list"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={ProductListPage}
             />
             <LayoutRoute
               exact
               path="/buttons"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={ButtonPage}
             /> 
             <LayoutRoute
               exact
               path="/cards"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={CardPage}
             />
             <LayoutRoute
               exact
               path="/widgets"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={WidgetPage}
             />
             <LayoutRoute
               exact
               path="/typography"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={TypographyPage}
             />
             <LayoutRoute
               exact
               path="/alerts"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={AlertPage}
             />
             <LayoutRoute
               exact
               path="/tables"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={TablePage}
             />
             <LayoutRoute
               exact
               path="/badges"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={BadgePage}
             />
             <LayoutRoute
               exact
               path="/button-groups"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={ButtonGroupPage}
             />
             <LayoutRoute
               exact
               path="/dropdowns"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={DropdownPage}
             />
             <LayoutRoute
               exact
               path="/progress"
+              breakpoint={breakpoint}
               layout={MainLayout}
               component={ProgressPage}
             />
