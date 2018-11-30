@@ -16,7 +16,7 @@ import axios from 'axios';
 import uuidv4 from 'uuid/v4'
 import Page from 'components/Page';
 import ImageInputField from './ImageInputField'
-
+import url from '../../config/url'
 
 class CreateProductPage extends Component {
   state = {
@@ -72,7 +72,7 @@ class CreateProductPage extends Component {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
-    axios.post('http://localhost:3001/products', productData, { headers: headers })
+    axios.post(`${url.products}`, productData, { headers: headers })
       .then(() => {
         this.props.history.push('/product-list')
       })

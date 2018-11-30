@@ -13,6 +13,7 @@ import {
 } from 'reactstrap';
 import axios from 'axios';
 import Page from 'components/Page';
+import url from '../../config/url';
 
 class EditSalesmanPage extends Component {
   state = {
@@ -24,7 +25,7 @@ class EditSalesmanPage extends Component {
   }
   
   componentDidMount() {  
-    axios.get(`http://localhost:3001/salesmen/?id=${this.props.match.params.id}`)
+    axios.get(`${url.salesmen}/?id=${this.props.match.params.id}`)
     .then((res) => {
        let data = res.data[0];
        this.setState({
@@ -58,7 +59,7 @@ class EditSalesmanPage extends Component {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
-    axios.put(`http://localhost:3001/salesmen/${this.props.match.params.id}`, salesmanData, { headers: headers })
+    axios.put(`${url.salesmen}/${this.props.match.params.id}`, salesmanData, { headers: headers })
       .then(() => {
         this.props.history.push('/salesman-list')
       })
@@ -102,7 +103,7 @@ class EditSalesmanPage extends Component {
                   <FormGroup>
                     <Label for="checkbox2">
                       Level
-                  </Label>
+                    </Label>
                       <FormGroup check>
                         <Label check>
                           <Input type="radio" name="level" value="1" checked={level === "1"} onChange={this.onChange} /> Level 1

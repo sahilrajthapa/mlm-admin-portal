@@ -14,6 +14,7 @@ import {
 import axios from 'axios';
 import uuidv4 from 'uuid/v4'
 import Page from 'components/Page';
+import url from '../../config/url'
 
 class CreateSalesmanPage extends Component {
   state = {
@@ -46,7 +47,7 @@ class CreateSalesmanPage extends Component {
       'Content-Type': 'application/json',
       'Accept': 'application/json' 
     }
-    axios.post('http://localhost:3001/salesmen', salesmanData, { headers: headers })
+    axios.post(`${url.salesmen}`, salesmanData, { headers: headers })
       .then(() => {
         this.props.history.push('/salesman-list')
       })

@@ -8,7 +8,6 @@ export default class SalesmanList extends Component {
       salesmen: []
   }
   componentDidMount() {
-      console.log('salemanlist mounted')
       axios.get('http://localhost:3001/salesmen')
         .then(res => {
             let data = res.data

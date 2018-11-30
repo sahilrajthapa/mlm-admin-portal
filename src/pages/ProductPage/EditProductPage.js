@@ -16,7 +16,7 @@ import axios from 'axios';
 import uuidv4 from 'uuid/v4'
 import Page from 'components/Page';
 import ImageInputField from './ImageInputField'
-
+import url from '../../config/url'
 
 class EditProductPage extends Component {
   state = {
@@ -30,7 +30,7 @@ class EditProductPage extends Component {
   }
   
   componentDidMount() {  
-    axios.get(`http://localhost:3001/products/?id=${this.props.match.params.id}`)
+    axios.get(`${url.products}/?id=${this.props.match.params.id}`)
     .then((res) => {
        let data = res.data[0];
        this.setState({
@@ -89,7 +89,7 @@ class EditProductPage extends Component {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
-    axios.put(`http://localhost:3001/salesmen/${this.props.match.params.id}`, productData, { headers: headers })
+    axios.put(`${url.products}/${this.props.match.params.id}`, productData, { headers: headers })
       .then(() => {
         this.props.history.push('/product-list')
       })

@@ -6,6 +6,7 @@ import "react-table/react-table.css";
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import Page from 'components/Page';
+import url from '../../config/url'
 
 class NewSalesmanList extends Component {
 
@@ -14,7 +15,7 @@ class NewSalesmanList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3001/salesmen')
+        axios.get(`${url.salesmen}`)
             .then(res => {
                 let data = res.data
                 this.setState({
@@ -24,7 +25,7 @@ class NewSalesmanList extends Component {
     }
 
     deleteSalesman = (id) => {
-      axios.delete(`http://localhost:3001/salesmen/${id}`)
+      axios.delete(`${url.salesmen}/${id}`)
          .then(() => {
             let filterSalesmen =  this.state.salesmen.filter(salesman => {
                  return salesman.id !== id

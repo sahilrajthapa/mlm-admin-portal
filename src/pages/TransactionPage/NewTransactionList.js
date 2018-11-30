@@ -4,6 +4,7 @@ import axios from 'axios'
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import Page from 'components/Page';
+import url from '../../config/url';
 
 class NewTransactionList extends Component {
 
@@ -12,7 +13,7 @@ class NewTransactionList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3001/order_list')
+        axios.get(`${url.orders}`)
             .then(res => {
                 let data = res.data
                 this.setState({
