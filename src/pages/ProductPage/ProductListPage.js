@@ -75,7 +75,8 @@ class NewSalesmanList extends Component {
                             Header: "Product Main Image",
                             id: "main image",
                             accessor: d => (<img src={d.mainImage} alt={d.name} style={{ width: '75px' }} />),
-                            filterable: false
+                            filterable: false,
+                            sortable: false
                         },
                         {
                             Header: "Product Image",
@@ -87,7 +88,8 @@ class NewSalesmanList extends Component {
                                     </p>
                                 )
                             }),
-                            filterable: false
+                            filterable: false,
+                            sortable: false
                         },
                         {
                             Header: "Details",
@@ -102,13 +104,15 @@ class NewSalesmanList extends Component {
                             id: "button",
                             accessor: d => (<Button color="primary" size="sm" block tag={Link}
                                 to={`/edit-product/${d.id}`} >Edit</Button>),
-                            filterable: false
+                            filterable: false,
+                            sortable: false
                         },
                         {
                             Header: "",
                             id: "button2",
                             accessor: d => (<Button color="danger" size="sm" block onClick={() => this.deleteSalesman(d.id)}>Delete</Button>),
-                            filterable: false
+                            filterable: false,
+                            sortable: false
                         }
                     ]}
                     defaultPageSize={10}

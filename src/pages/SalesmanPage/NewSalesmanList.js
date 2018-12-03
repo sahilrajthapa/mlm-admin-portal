@@ -93,11 +93,21 @@ class NewSalesmanList extends Component {
                             id: "button",
                             accessor: d => (<Button color="primary" size="sm" block tag={Link}
                             to={`/edit-salesman/${d.id}`} >Edit</Button>),
+                            fiterable: false,
+                            sortable: false
                         },
                         {
                             Header: "",
                             id: "button2",
                             accessor: d => (<Button color="danger" size="sm" block onClick={() => this.deleteSalesman(d.id)}>Delete</Button>),
+                            filterable: false,
+                            sortable: false
+                        }
+                    ]}
+                    defaultSorted={[
+                        {
+                          id: "level",
+                          desc: false
                         }
                     ]}
                     defaultPageSize={10}

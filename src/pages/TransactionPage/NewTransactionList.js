@@ -114,7 +114,8 @@ class NewTransactionList extends Component {
                             Header: "Product Image",
                             id: "product_img",
                             accessor: d => (<img src={d.product_img} alt={d.product_name} style={{ width: '50px' }} />),
-                            filterable: false
+                            filterable: false,
+                            sortable: false
                         },
                         {
                             Header: "Delivery Company",
@@ -128,7 +129,8 @@ class NewTransactionList extends Component {
                             Header: "",
                             id: "button",
                             accessor: d => (<Button color="primary" size="sm" block onClick={() => this.viewCommision(d.order_id)}>Commission</Button>),
-                            filterable: false
+                            filterable: false,
+                            sortable: false
                         }
                     ]}
                     defaultPageSize={10}

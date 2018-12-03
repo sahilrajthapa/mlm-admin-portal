@@ -104,16 +104,16 @@
       "trans_id": "1900000109201404103172199812",
       "commission_tree": [
         {
+          "salesman_id": "5bf14184cf7ee8208283267b",
+          "name": "Mary Jane",
+          "commission": 34,
+          "level": 2
+        },
+        {
           "salesman_id": "5bf15e050c96e729d7016565",
           "commission": 45,
           "name": "zlatan",
           "level": 1
-        },
-        {
-          "salesman_id": "5bf14184cf7ee8208283267b",
-          "name": "Mary Jane",
-          "commission": 52,
-          "level": 2
         },
         {
           "salesman_id": "319d90ae-1358-4125-b595-b8bb54a0fdc8",

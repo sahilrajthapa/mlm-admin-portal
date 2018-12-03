@@ -47,13 +47,20 @@ class CommissionList extends Component {
                 Header: "Level",
                 id: "level",
                 accessor: d => d.level,
-                filterable: false
+                filterable: false,
+                defaultSortDesc: true
               },
               {
                 Header: "Commission",
                 id: "commission",
                 accessor: d => d.commission,
                 filterable: false
+              }
+            ]}
+            defaultSorted={[
+              {
+                id: "level",
+                desc: false
               }
             ]}
             defaultPageSize={10}
