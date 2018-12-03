@@ -1,7 +1,8 @@
 {
   "orders": [
     {
-      "order_id": "7197417460812533543",
+      "salesmanid": "5bf14184cf7ee8208283267b",
+      "order_id": "7197317460812533543",
       "order_status": 3,
       "order_total_price": 6,
       "order_create_time": 1543313127052,
@@ -22,10 +23,25 @@
       "product_img": "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0",
       "delivery_id": "1900659372473",
       "delivery_company": "059Yunda",
-      "trans_id": "1900000109201404103172199810"
+      "trans_id": "1900000109201404103172199810",
+      "commission_tree": [
+        {
+          "salesman_id": "5bf14184cf7ee8208283267b",
+          "name": "Mary Jane",
+          "commission": 52,
+          "level": 2
+        },
+        {
+          "salesman_id": "319d90ae-1358-4125-b595-b8bb54a0fdc8",
+          "name": "Justin Langer",
+          "commission": 24,
+          "level": 3
+        }
+      ]
     },
     {
-      "order_id": "7197417460812533569",
+      "salesman_id": "5bf14184cf7ee8208283267b",
+      "order_id": "7197667460845533543",
       "order_status": 2,
       "order_total_price": 1,
       "order_create_time": 1435583700000,
@@ -46,10 +62,25 @@
       "product_img": "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0",
       "delivery_id": "1900659372473",
       "delivery_company": "059Yunda",
-      "trans_id": "1900000109201404103172199811"
+      "trans_id": "1900000109201404103172199811",
+      "commission_tree": [
+        {
+          "salesman_id": "5bf14184cf7ee8208283267b",
+          "name": "Mary Jane",
+          "commission": 34,
+          "level": 2
+        },
+        {
+          "salesman_id": "319d90ae-1358-4125-b595-b8bb54a0fdc8",
+          "name": "Justin Langer",
+          "commission": 24,
+          "level": 3
+        }
+      ]
     },
     {
-      "order_id": "7197417460812533543",
+      "salesman_id": "5bf15e050c96e729d7016565",
+      "order_id": "7197417469812533543",
       "order_status": 5,
       "order_total_price": 6,
       "order_create_time": 1435410900000,
@@ -70,9 +101,30 @@
       "product_img": "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0",
       "delivery_id": "1900659372473",
       "delivery_company": "059Yunda",
-      "trans_id": "1900000109201404103172199812"
+      "trans_id": "1900000109201404103172199812",
+      "commission_tree": [
+        {
+          "salesman_id": "5bf15e050c96e729d7016565",
+          "commission": 45,
+          "name": "zlatan",
+          "level": 1
+        },
+        {
+          "salesman_id": "5bf14184cf7ee8208283267b",
+          "name": "Mary Jane",
+          "commission": 52,
+          "level": 2
+        },
+        {
+          "salesman_id": "319d90ae-1358-4125-b595-b8bb54a0fdc8",
+          "name": "Justin Langer",
+          "commission": 24,
+          "level": 3
+        }
+      ]
     },
     {
+      "salesman_id": "5bf15e050c96e729d7016565",
       "order_id": "7197417460812533569",
       "order_status": 8,
       "order_total_price": 1,
@@ -94,10 +146,25 @@
       "product_img": "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0",
       "delivery_id": "1900659372473",
       "delivery_company": "059Yunda",
-      "trans_id": "1900000109201404103172199813"
+      "trans_id": "1900000109201404103172199813",
+      "commission_tree": [
+        {
+          "salesman_id": "5bf15e050c96e729d7016565",
+          "name": "zlatan",
+          "commission": 43,
+          "level": 1
+        },
+        {
+          "salesman_id": "319d90ae-1358-4125-b595-b8bb54a0fdc8",
+          "name": "Justin Langer",
+          "commission": 24,
+          "level": 3
+        }
+      ]
     },
     {
-      "order_id": "7197417460812533543",
+      "salesman_id": "5bf15dd20c96e729d7016562",
+      "order_id": "7197667460812533543",
       "order_status": 5,
       "order_total_price": 6,
       "order_create_time": 564488100000,
@@ -118,10 +185,25 @@
       "product_img": "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0",
       "delivery_id": "1900659372473",
       "delivery_company": "059Yunda",
-      "trans_id": "1900000109201404103172199814"
+      "trans_id": "1900000109201404103172199814",
+      "commission_tree": [
+        {
+          "salesman_id": "5bf15dd20c96e729d7016562",
+          "name": "Kevin Hendricks",
+          "commission": 34,
+          "level": 1
+        },
+        {
+          "salesman_id": "319d90ae-1358-4125-b595-b8bb54a0fdc8",
+          "name": "Justin Langer",
+          "commission": 24,
+          "level": 3
+        }
+      ]
     },
     {
-      "order_id": "7197417460812533569",
+      "salesman_id": "319d90ae-1358-4125-b595-b8bb54a0fdc8",
+      "order_id": "7197417465812533569",
       "order_status": 8,
       "order_total_price": 1,
       "order_create_time": 1394636235,
@@ -142,7 +224,15 @@
       "product_img": "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2icND8WwMThBEcehjhDv2icY4GrDSG5RLM3B2qd9kOicWGVJcsAhvXfibhWRNoGOvCfMC33G9z5yQr2Qw/0",
       "delivery_id": "1900659372473",
       "delivery_company": "059Yunda",
-      "trans_id": "1900000109201404103172199815"
+      "trans_id": "1900000109201404103172199815",
+      "commission_tree": [
+        {
+          "salesman_id": "319d90ae-1358-4125-b595-b8bb54a0fdc8",
+          "name": "Justin Langer",
+          "commission": 24,
+          "level": 3
+        }
+      ]
     }
   ],
   "salesmen": [

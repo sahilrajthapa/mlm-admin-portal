@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import matchSorter from 'match-sorter'
 import axios from 'axios'
+import { Button } from 'reactstrap';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import Page from 'components/Page';
+import CommissionList from './CommissionList'
 import url from '../../config/url';
 
 class NewTransactionList extends Component {
 
     state = {
-        transactionList: []
+        transactionList: [],
+        commission: [],
+        show: false,
     }
 
     componentDidMount() {
@@ -21,8 +25,23 @@ class NewTransactionList extends Component {
                 })
             })
     }
+
+    viewCommision = (id) => {
+        console.log(id)
+        let commission = this.state.transactionList.filter(transaction => transaction.order_id === id)[0].commission_tree
+        this.setState({
+            commission,
+            show: true
+        })
+    }
+
+    toggle = () => {
+        this.setState({
+          show: !this.state.show,
+        });
+    };
     render() {
-        const { transactionList } = this.state;
+        const { transactionList, commission, show } = this.state;
         const orderStatus = (status) => {
             if (status === 2) {
                 return 'Shipped'
@@ -34,6 +53,8 @@ class NewTransactionList extends Component {
                 return 'Dimensional right'
             }
         }
+
+        
         return (
             <Page
                 title="Transaction List"
@@ -54,9 +75,7 @@ class NewTransactionList extends Component {
                             Header: "Order Status",
                             id: "order_status",
                             accessor: d => orderStatus(d.order_status),
-                            filterMethod: (filter, rows) => {
-                                console.log('match',  matchSorter(rows, filter.value, { keys: ["order_status"] }))
-                                return matchSorter(rows, filter.value, { keys: ["order_status"] }) },
+                            filterMethod: (filter, rows) => matchSorter(rows, filter.value, { keys: ["order_status"] }) ,
                             filterAll: true
                         },
                         {
@@ -104,11 +123,18 @@ class NewTransactionList extends Component {
                             filterMethod: (filter, rows) =>
                                 matchSorter(rows, filter.value, { keys: ["delivery_company"] }),
                             filterAll: true
+                        },
+                        {
+                            Header: "",
+                            id: "button",
+                            accessor: d => (<Button color="primary" size="sm" block onClick={() => this.viewCommision(d.order_id)}>Commission</Button>),
+                            filterable: false
                         }
                     ]}
                     defaultPageSize={10}
                     className="-striped -highlight"
                 />
+                {show &&  <CommissionList show={show} commission={commission} toggle={this.toggle}/> }
             </Page>
         );
     }
